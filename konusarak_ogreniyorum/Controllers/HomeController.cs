@@ -15,12 +15,30 @@ namespace konusarak_ogreniyorum.Controllers
             return View();
         }
 
-        public IActionResult About()
+        [HttpPost]
+        public IActionResult Index(IndexModel model)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            bool check = IndexModel.check_user(model.username, model.password);
+            if (check)
+            {
+                return View("Generate_Exam");
+            }
+            return View(model);
         }
+
+
+
+        public IActionResult Generate_Exam()
+        {
+            return View("Contact");
+        }
+
+        [HttpPost]
+        public IActionResult Generate_Exam(Generate_ExamModel model)
+        {
+            Generate_ExamModel.write_to_database1();
+            return View("Contact");
+        } 
 
         public IActionResult Contact()
         {

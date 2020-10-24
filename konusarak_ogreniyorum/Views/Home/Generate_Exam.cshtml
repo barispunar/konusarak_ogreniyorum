@@ -1,0 +1,201 @@
+﻿@model konusarak_ogreniyorum.Models.Generate_ExamModel
+
+@{
+    ViewData["Title"] = "Generate_Exam";
+    Generate_ExamModel.generate_data();
+}
+
+<div class="panel panel-success" panel-succes>
+    <div class=" panel-heading"><h4>Giriş</h4></div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Sınav Seçiniz</label>
+                @Html.DropDownListFor(x => Generate_ExamModel.selected_exam, new[]
+           {
+               new SelectListItem() {Text = Generate_ExamModel.listed_news[0]},
+               new SelectListItem() {Text = Generate_ExamModel.listed_news[1] },
+               new SelectListItem() {Text = Generate_ExamModel.listed_news[2] },
+               new SelectListItem() {Text = Generate_ExamModel.listed_news[3] },
+               new SelectListItem() {Text = Generate_ExamModel.listed_news[4] }
+           }
+
+           , new {@class = "form-control"})
+
+            </div>
+
+            <div class="form-group">
+                <label>Sınav Metni</label>
+                @Html.Label(Generate_ExamModel.find_content())
+            </div>
+
+            <div class="form-group">
+                <label>1. SORU</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.questions[0], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>A</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.first_question_answers[0], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>B</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.first_question_answers[1], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>C</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.first_question_answers[2], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>D</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.first_question_answers[3], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>Doğru Cevap</label>
+                @Html.DropDownListFor(x => Generate_ExamModel.answers[0], new[]
+           {
+               new SelectListItem() {Text = "A"},
+               new SelectListItem() {Text ="B" },
+               new SelectListItem() {Text ="C" },
+               new SelectListItem() {Text ="D" },
+
+           }
+
+           , new {@class = "form-control"})
+
+            </div>
+
+            <div class="form-group">
+                <label>2. SORU</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.questions[1], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>A</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.second_question_answers[0], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>B</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.second_question_answers[1], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>C</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.second_question_answers[2], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>D</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.second_question_answers[3], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>Doğru Cevap</label>
+                @Html.DropDownListFor(x => Generate_ExamModel.answers[1], new[]
+           {
+               new SelectListItem() {Text = "A"},
+               new SelectListItem() {Text ="B" },
+               new SelectListItem() {Text ="C" },
+               new SelectListItem() {Text ="D" },
+
+           }
+
+           , new {@class = "form-control"})
+
+            </div>
+
+            <div class="form-group">
+                <label>3. SORU</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.questions[2], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>A</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.third_question_answers[0], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>B</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.third_question_answers[1], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>C</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.third_question_answers[2], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>D</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.third_question_answers[3], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>Doğru Cevap</label>
+                @Html.DropDownListFor(x => Generate_ExamModel.answers[2], new[]
+           {
+               new SelectListItem() {Text = "A"},
+               new SelectListItem() {Text ="B" },
+               new SelectListItem() {Text ="C" },
+               new SelectListItem() {Text ="D" },
+
+           }
+
+           , new {@class = "form-control"})
+
+            </div>
+
+            <div class="form-group">
+                <label>4. SORU</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.questions[3], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>A</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.fourth_question_answers[0], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>B</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.fourth_question_answers[1], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>C</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.fourth_question_answers[2], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>D</label>
+                @Html.TextBoxFor(x => Generate_ExamModel.fourth_question_answers[3], new { @class = "form-controller" })
+            </div>
+
+            <div class="form-group">
+                <label>Doğru Cevap</label>
+                @Html.DropDownListFor(x => Generate_ExamModel.answers[3], new[]
+           {
+               new SelectListItem() {Text = "A"},
+               new SelectListItem() {Text ="B" },
+               new SelectListItem() {Text ="C" },
+               new SelectListItem() {Text ="D" },
+
+           }
+
+           , new {@class = "form-control"})
+
+            </div>
+
+            <div class="form-group">
+                <input class="=" btn btn-success" type="submit" value="Kaydet" />
+            </div>
+        }
+
+    </div>
+
+ </div>
+
